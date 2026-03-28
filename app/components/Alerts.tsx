@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Alert, StyleSheet, View } from "react-native";
-import ProductList from "./components/ProductList";
+import { Alert, Button, Text, View } from "react-native";
 
 const username = "vlad";
 
-export default function Index() {
+export default function Alerts() {
   const [count, setCount] = useState(0);
 
   const showAlert = () => {
@@ -27,17 +26,10 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
-      <ProductList />
-      {/* <Alerts /> */}
+    <View>
+      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Button title="Press me" onPress={showAlert} />
+      <Text>Count: {count}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
