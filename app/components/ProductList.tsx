@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
 import { Product } from "../models/Product";
+import ProductForm from "./ProductForm";
 import ProductItem from "./ProductItem";
 
 const api = "https://fakestoreapi.com/products";
@@ -19,19 +20,24 @@ export default function ProductList() {
       .catch((err) => Alert.alert("Error", err.message));
   };
 
-  const handleDeleteProduct = (id: number) => {
+  const deleteProduct = (id: number) => {
     setProducts((prevProducts) =>
       prevProducts.filter((product) => product.id !== id),
     );
   };
 
+  const createProduct = (product: Product) => {
+    setProducts((prevProducts) => [product, ...prevProducts]);
+  };
+
   return (
     <View style={styles.container}>
+      <ProductForm onCreate={createProduct} />
       <Text style={styles.title}>Product List</Text>
       <FlatList
         data={products}
         renderItem={({ item }) => (
-          <ProductItem product={item} onDelete={handleDeleteProduct} />
+          <ProductItem product={item} onDelete={deleteProduct} />
         )}
         initialNumToRender={6}
         keyExtractor={(i, ind) => i.id?.toString() ?? ind.toString()}
