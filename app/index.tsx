@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import ProductList from "./components/ProductList";
@@ -28,6 +29,9 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
+      <Link href="./screens/details" style={{ marginTop: 20 }}>
+        Go to Details
+      </Link>
       <ProductList />
       {/* <Alerts /> */}
     </View>
