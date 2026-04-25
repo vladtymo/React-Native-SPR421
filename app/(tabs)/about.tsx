@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function About() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>About This App</Text>
       <Text style={styles.description}>
         This React Native app is built with Expo Router and TypeScript.
@@ -21,7 +22,7 @@ export default function About() {
           Practice navigation and state management.
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

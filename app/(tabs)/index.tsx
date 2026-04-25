@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { useState } from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import { Alert, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import ProductList from "../components/ProductList";
 
 const username = "vlad";
@@ -28,13 +29,13 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
-      <Link href="./screens/details" style={{ marginTop: 20 }}>
+    <SafeAreaView style={styles.container}>
+      <Link href="./details" style={{ marginTop: 20 }}>
         Go to Details
       </Link>
       <ProductList />
       {/* <Alerts /> */}
-    </View>
+    </SafeAreaView>
   );
 }
 
