@@ -1,7 +1,7 @@
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
-import ProductList from "./components/ProductList";
+import ProductList from "../components/ProductList";
 
 const username = "vlad";
 
