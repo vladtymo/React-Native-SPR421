@@ -15,6 +15,10 @@ export default function TabLayout() {
         <Icon sf="newspaper.fill" drawable="custom_info_drawable" />
         <Label>Details</Label>
       </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="db">
+        <Icon sf="folder.fill" drawable="custom_info_drawable" />
+        <Label>Db</Label>
+      </NativeTabs.Trigger>
     </NativeTabs>
   );
 }
